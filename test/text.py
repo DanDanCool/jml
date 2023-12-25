@@ -1,5 +1,5 @@
 from pathlib import Path
-import jml
+import jmllib
 
 path = Path('test.jml')
 
@@ -13,13 +13,13 @@ path = Path('test.jml')
 #print(env)
 
 with open('test.jml', 'r') as f:
-    data = jml.load(f)
+    data = jmllib.load(f)
     print(data)
 
 with open('dump.jml', 'w') as f:
-    jml.dump(data, f)
+    jmllib.dump(data, f)
 
 with open('dump.jml', 'r') as f:
-    data2 = jml.load(f)
+    data2 = jmllib.load(f)
     print(data2)
 
