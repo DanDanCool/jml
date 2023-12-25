@@ -140,8 +140,11 @@ class Tokenizer:
                 tokens.append(Token(TokenType.NUMBER, self.data, beg, self.index))
             else:
                 # handle identifiers and keywords
+                def accept(c):
+                    special = [ '_' ]
+                    return c.isalnum() or c in special
                 beg = self.index - 1
-                while not self.eof() and self.data[self.index].isalnum():
+                while not self.eof() and accept(self.data[self.index]):
                     self.index += 1
                 s = self.data[beg:self.index]
                 if s in Tokenizer.keywords:

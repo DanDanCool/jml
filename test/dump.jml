@@ -1,3 +1,4 @@
+my_value = 77.0
 myarray = [4.0, 5.0, 6.0, 7.0]
 myboolean = true
 otherbool = false
