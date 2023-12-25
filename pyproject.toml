@@ -1,5 +1,5 @@
 [project]
-name = "jml"
+name = "jmllib"
 description = "jolly markup language"
 readme = "README.md"
 requires-python = ">=3.10"
