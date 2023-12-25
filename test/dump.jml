@@ -1,0 +1,26 @@
+myarray = [4.0, 5.0, 6.0, 7.0]
+myboolean = true
+otherbool = false
+mystring = "hello world"
+myfloat = 4.0
+mysigned = -3.0
+myhex = 11256099
+bignumber = 69420111999.0
+myeval = -4.0
+testadd = 8.0
+testcmp = false
+testeq = false
+teststringadd = "helloworld"
+testarray = [7.0, 14.0, -3.0]
+multidimensional = [[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]
+a = [1.0, 2.0, 3.0, 4.0, 5.0]
+b = ["hello", "world", "hi"]
+d = 8.0
+myval = 4.0
+inner = {d = 3.0, myval = 4.0}
+mydict = {a = 4.0, b = 5.0, inner = {d = 3.0, myval = 4.0}}
+c = [true, true, false]
+e = 0.0
+f = 0.0
+arrayoftable = [{a = 4.0, b = 5.0}, {c = 2.0, d = 8.0}, {e = 0.0, f = 0.0}]
+tableofarray = {a = [1.0, 2.0, 3.0, 4.0, 5.0], b = ["hello", "world", "hi"], c = [true, true, false]}

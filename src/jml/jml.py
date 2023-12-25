@@ -388,3 +388,38 @@ def loads(s):
 
 def load(f):
     return loads(f.read())
+
+def dump_item(item):
+    match item:
+        case bool():
+            if item:
+                return "true"
+            else:
+                return "false"
+        case int() | float():
+            return str(item)
+        case str():
+            return f"\"{item}\""
+        case list():
+            strs = []
+            for x in item:
+                strs.append(dump_item(x))
+            return f"[{', '.join(strs)}]"
+        case dict():
+            statements = []
+            for k, v in item.items():
+                statement = f"{k} = {dump_item(v)}"
+                statements.append(statement)
+            return '{' + ', '.join(statements) + '}'
+    return '0'
+
+def dumps(d):
+    statements = []
+    for k, v in d.items():
+        statement = f"{k} = {dump_item(v)}"
+        statements.append(statement)
+    return '\n'.join(statements)
+
+def dump(d, f):
+    data = dumps(d)
+    f.write(data)

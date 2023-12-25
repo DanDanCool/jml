@@ -5,3 +5,5 @@ from .jml import ParseError
 from .jml import evaluate
 from .jml import loads
 from .jml import load
+from .jml import dumps
+from .jml import dump

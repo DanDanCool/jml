@@ -12,5 +12,14 @@ path = Path('test.jml')
 #env = jml.evaluate(statements)
 #print(env)
 
-with open('error.jml') as f:
-    print(jml.load(f))
+with open('test.jml', 'r') as f:
+    data = jml.load(f)
+    print(data)
+
+with open('dump.jml', 'w') as f:
+    jml.dump(data, f)
+
+with open('dump.jml', 'r') as f:
+    data2 = jml.load(f)
+    print(data2)
+
