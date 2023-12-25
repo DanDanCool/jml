@@ -1,0 +1,20 @@
+# unpaired left brace
+myarray = [ 4, 5
+
+# invalid comparison
+cmp = 5 == true
+
+# invalid addition
+tryadd = 5 + "hello"
+
+# gibberish
+a = [[{{sdfd}}sdf21341234jj
+
+# use of undefined variable
+hello = world
+
+# bad use of dictionary
+a = { 5, 6, 8 }
+
+# literal with no lvalue
+54

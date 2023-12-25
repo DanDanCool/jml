@@ -42,6 +42,10 @@ def linecolumn(s, n):
     return (ln, col)
 
 
+def getline(s, pos):
+    return s.split('\n')[pos[0]]
+
+
 class Tokenizer:
     single_character = {
             '(': TokenType.LPAREN,
@@ -169,7 +173,7 @@ class Parser:
 
     def consume(self, token):
         if self.cur().tokentype != token:
-            raise ParseError(f"unexpected token '{self.tokens[self.index].tokentype}' found!", self.tokens[self.index])
+            raise ParseError(f"expected '{token}', found '{self.cur().tokentype}'", self.cur())
         self.index += 1
 
     def match(self, token):
@@ -360,3 +364,27 @@ def evaluate(statements):
     if len(errs):
         raise ExceptionGroup('one or more errors encountered while evaluating syntax tree', errs)
     return env
+
+def loads(s):
+    def report_errors(err):
+        for e in err.exceptions:
+            print(e.message)
+            beg = linecolumn(s, e.token.beg)
+            end = linecolumn(s, e.token.end)
+            print(f"at line {beg[0]} columns {beg[1]} to {end[1]}")
+            line = getline(s, beg)
+            print(f"{line[0:beg[1]-1]}**{line[beg[1]-1:end[1]-1]}**{line[end[1]-1:-1]}")
+
+    t = Tokenizer()
+    tokens = t.tokenize(s)
+    p = Parser()
+
+    statements = None
+    try:
+        statements = p.parse(tokens)
+        return evaluate(statements)
+    except ExceptionGroup as err:
+        report_errors(err)
+
+def load(f):
+    return loads(f.read())
