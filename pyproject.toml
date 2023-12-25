@@ -1,0 +1,14 @@
+[project]
+name = "jml"
+description = "jolly markup language"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+dynamic = [ "version" ]
+
+[project.urls]
+"Homepage" = "https://github.com/DanDanCool/jml"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

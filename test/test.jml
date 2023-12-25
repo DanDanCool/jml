@@ -1,0 +1,57 @@
+# this is a comment
+
+# arrays are assumed to be holding homogenous types
+myarray = [ 4, 5, 6, 7 ]
+
+# this is a boolean
+myboolean = true
+otherbool = false
+
+mystring = "hello world"
+
+# all numbers are represented by double precision floats
+myfloat = 4.0
+
+mysigned = -3
+
+## support for hex
+myhex = 0xabc123
+
+bignumber = 69_420_111_999
+
+# allows for basic expression evaluation
+myeval = myfloat * (mysigned + 2)
+
+testadd = 5 + 3
+
+testcmp = 5 < 3
+
+testeq = testadd == myfloat
+
+teststringadd = "hello" + "world"
+
+testarray = [ 3 + 4, 5 + 9, -3 ]
+
+multidimensional = [ [1, 2], [3, 4], [5, 6] ]
+
+# this is a table
+mydict = {
+	a = 4,
+	b = 5,
+	inner = {
+		d = 3,
+		myval = 4
+	}
+}
+
+arrayoftable = [
+	{ a = 4, b = 5 },
+	{ c = 2, d = 8 },
+	{ e = 0, f = 0 },
+]
+
+tableofarray = {
+	a = [ 1, 2, 3, 4, 5 ],
+	b = [ "hello", "world", "hi" ],
+	c = [ true, true, false ]
+}
