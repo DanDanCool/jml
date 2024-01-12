@@ -133,9 +133,13 @@ class Tokenizer:
             elif c.isdigit():
                 # handle numbers
                 beg = self.index - 1
-                special = 'x_.abcdef'
+                special = 'x_.abcdef-'
+                minus = False
                 validchar = lambda c: c.isdigit() or (c.lower() in special)
                 while not self.eof() and validchar(self.data[self.index]):
+                    if self.data[self.index] == '-':
+                        if minus: break
+                        minus = True
                     self.index += 1
                 tokens.append(Token(TokenType.NUMBER, self.data, beg, self.index))
             else:

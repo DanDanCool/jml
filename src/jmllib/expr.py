@@ -80,7 +80,6 @@ class NumberExpr(Expr):
             underscore = False
             dot = False
             e_index = -1
-            multiplier = 1
 
             for i, c in enumerate(data):
                 if not (c.isdecimal() or c.lower() in valid_chars):
@@ -99,21 +98,17 @@ class NumberExpr(Expr):
                     e_index = i
                     break
             if e_index != -1:
-                minus = data[e_index + 1] == '-'
                 beg = e_index + 1 + (data[e_index + 1] in '-+')
                 # unlike python we do not allow underscores in the e specifier
                 for i, c in enumerate(data[beg:]):
                     if not c.isdecimal():
                         invalid.append(i)
                         valid = False
-                multiplier = float(data[beg:])
-                if minus:
-                    multiplier = 1 / multiplier
             if dot and len(data) == 1:
                 valid = False
                 invalid.append(0)
             if valid:
-                return float(data) * multiplier
+                return float(data)
             raise EvalError(f"invalid chars found in number: {show_errors(data, invalid)}", self.token)
         raise EvalError('unable to parse number', self.token)
 

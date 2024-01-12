@@ -16,6 +16,8 @@ myfloat = 4.0
 
 mysigned = -3
 
+myscientificnotation = 1.457e-4
+
 ## support for hex
 myhex = 0xabc123
 

@@ -5,6 +5,7 @@ otherbool = false
 mystring = "hello world"
 myfloat = 4.0
 mysigned = -3.0
+myscientificnotation = 0.0001457
 myhex = 11256099
 bignumber = 69420111999.0
 myeval = -4.0
